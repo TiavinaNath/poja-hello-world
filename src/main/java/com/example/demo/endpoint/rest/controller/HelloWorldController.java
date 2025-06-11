@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.example.demo.mail.Email;
 import com.example.demo.mail.Mailer;
 import jakarta.mail.internet.InternetAddress;
@@ -18,7 +17,6 @@ public class HelloWorldController {
   private final HelloWorldService service;
   private final Mailer mailer;
 
-
   @GetMapping("/helloo")
   public String hellooWorld(@RequestParam String name) {
     return service.uploadHelloWorldMessage(name);
@@ -29,8 +27,8 @@ public class HelloWorldController {
   public String helloWorld(@RequestParam String to) {
     var email =
         new Email(
-          new InternetAddress(to), List.of(), List.of(), "Hello world", "... world!", List.of());
-
+            new InternetAddress(to), List.of(), List.of(), "Hello world", "... world!", List.of());
+    
     mailer.accept(email);
     return "... world!";
   }

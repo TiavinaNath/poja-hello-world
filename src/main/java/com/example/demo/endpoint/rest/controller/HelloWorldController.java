@@ -16,19 +16,20 @@ import lombok.SneakyThrows;
 @AllArgsConstructor
 public class HelloWorldController {
   private final HelloWorldService service;
-    private final Mailer mailer;
+  private final Mailer mailer;
 
 
-  @GetMapping("/hello")
-  public String helloWorld(@RequestParam String name) {
+  @GetMapping("/helloo")
+  public String hellooWorld(@RequestParam String name) {
     return service.uploadHelloWorldMessage(name);
   }
 
-  @GetMapping("/helloo")
+  @GetMapping("/hello")
   @SneakyThrows
-  public String hellooWorld(@RequestParam String to) {
+  public String helloWorld(@RequestParam String to) {
     var email =
-        new Email(new InternetAddress(to), List.of(), List.of(), "Hello world", "... world!", List.of());
+        new Email(
+          new InternetAddress(to), List.of(), List.of(), "Hello world", "... world!", List.of());
 
     mailer.accept(email);
     return "... world!";

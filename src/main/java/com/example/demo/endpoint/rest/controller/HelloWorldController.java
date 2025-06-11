@@ -1,8 +1,8 @@
 package com.example.demo.endpoint.rest.controller;
 
-import com.example.demo.service.HelloWorldService;
 import com.example.demo.endpoint.event.EventProducer;
 import com.example.demo.endpoint.event.model.SendEmailRequested;
+import com.example.demo.service.HelloWorldService;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;

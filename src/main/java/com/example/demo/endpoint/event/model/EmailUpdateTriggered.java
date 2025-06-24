@@ -22,4 +22,4 @@ public class EmailUpdateTriggered extends PojaEvent {
   public Duration maxConsumerBackoffBetweenRetries() {
     return Duration.ofMinutes(1);
   }
-}
+ }
